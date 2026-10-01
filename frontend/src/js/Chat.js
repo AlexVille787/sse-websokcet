@@ -183,7 +183,7 @@ export default class Chat {
 
     const header = document.createElement("div");
     header.classList.add("message__header");
-    header.textContent = `${isYou ? "You" : msg.user.name}, ${this.formatDate(
+    header.textContent = `${isYou ? "You" : msg.user.name}, ${Chat.formatDate(
       new Date(),
     )}`;
 
@@ -198,7 +198,7 @@ export default class Chat {
     this.messagesContainer.scrollTop = this.messagesContainer.scrollHeight;
   }
 
-  formatDate(date) {
+  static formatDate(date) {
     const pad = (n) => String(n).padStart(2, "0");
     const hours = pad(date.getHours());
     const minutes = pad(date.getMinutes());
